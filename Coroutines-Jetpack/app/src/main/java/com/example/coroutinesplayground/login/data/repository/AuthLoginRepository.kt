@@ -15,12 +15,10 @@ class AuthLoginRepositoryImpl (
     private val getAuthStateRequestCall: GetAuthStateRequest
 ): AuthLoginRepository {
     override suspend fun authenticate(userData: UserCredentials): Result<AuthState> {
-
         if (userData.username == "" || userData.password == "") {
             return Result.failure(Exception("Empty credentials"))
         }
 
         return getAuthStateRequestCall.execute(userData.username, userData.password)
     }
-
 }

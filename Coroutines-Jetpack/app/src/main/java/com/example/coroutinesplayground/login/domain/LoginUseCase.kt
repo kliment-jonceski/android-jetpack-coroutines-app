@@ -6,11 +6,11 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class LoginUseCase (
+class LoginUseCase(
     private val authNetworkRepository: AuthLoginRepository,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
-){
-    suspend operator fun invoke(userCredentials: UserCredentials)  =
+) {
+    suspend operator fun invoke(userCredentials: UserCredentials) =
         withContext(dispatcher) {
             authNetworkRepository.authenticate(userCredentials)
         }
