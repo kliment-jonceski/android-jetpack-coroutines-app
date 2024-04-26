@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.coroutinesplayground.login.domain.model.UserCredentials
 import com.example.coroutinesplayground.login.view.viewmodel.LoginViewModel
 
 @Composable
@@ -31,7 +32,7 @@ fun LoginComponent(
     uiState: LoginViewModel.LoginState
 ) {
     var credentialsState by remember {
-        mutableStateOf(LoginCredentials("", ""))
+        mutableStateOf(UserCredentials("", ""))
     }
 
     Column (modifier = Modifier
@@ -69,8 +70,7 @@ fun LoginComponent(
             onclick = {
                 loginViewModel.onEvent(
                     LoginViewModel.Event.OnSubmitLogin(
-                        credentialsState.username,
-                        credentialsState.password)
+                        credentialsState)
                 )
             })
     }
@@ -123,8 +123,3 @@ fun LoginButton(
             modifier = Modifier.padding(horizontal = 16.dp))
     }
 }
-
-data class LoginCredentials(
-    var username: String,
-    var password: String = ""
-)

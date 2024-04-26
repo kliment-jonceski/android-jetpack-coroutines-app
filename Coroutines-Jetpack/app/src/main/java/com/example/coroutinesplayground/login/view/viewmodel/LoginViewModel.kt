@@ -3,6 +3,7 @@ package com.example.coroutinesplayground.login.view.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.coroutinesplayground.login.domain.LoginUseCase
+import com.example.coroutinesplayground.login.domain.model.UserCredentials
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -18,15 +19,15 @@ class LoginViewModel(
     fun onEvent (event: Event) {
         viewModelScope.launch {
             when (event) {
-                is Event.OnSubmitLogin -> submitLogin(event.username, event.password)
+                is Event.OnSubmitLogin -> submitLogin(event.userCredentials)
             }
         }
     }
 
-    private suspend fun submitLogin (username: String, password: String) {
+    private suspend fun submitLogin (userCredentials: UserCredentials) {
         _state.emit(LoginState.InProgress)
         Timber.d("Login started, In progress....")
-        val result = loginUseCase(username, password)
+        val result = loginUseCase(userCredentials)
         if (result.isSuccess) {
             Timber.d("Login finished Successfully")
             _state.update { LoginState.Success }
@@ -44,6 +45,6 @@ class LoginViewModel(
     }
 
     sealed class Event {
-        data class OnSubmitLogin(val username: String, val password: String) : Event()
+        data class OnSubmitLogin(val userCredentials: UserCredentials) : Event()
     }
 }
