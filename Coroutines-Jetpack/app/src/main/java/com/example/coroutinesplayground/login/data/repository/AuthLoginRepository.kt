@@ -1,7 +1,7 @@
-package com.example.coroutinesplayground.login.domain.data
+package com.example.coroutinesplayground.login.data.repository
 
-import com.example.coroutinesplayground.login.domain.data.network.GetAuthStateRequest
-import com.example.coroutinesplayground.login.domain.model.AuthState
+import com.example.coroutinesplayground.login.data.network.GetAuthStateRequest
+import com.example.coroutinesplayground.login.data.model.AuthState
 import com.example.coroutinesplayground.login.domain.model.UserCredentials
 
 /**

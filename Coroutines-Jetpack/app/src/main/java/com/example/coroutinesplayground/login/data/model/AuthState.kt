@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.login.domain.model
+package com.example.coroutinesplayground.login.data.model
 
 class AuthState (
     private val sessionID: String,

@@ -1,6 +1,6 @@
-package com.example.coroutinesplayground.login.domain.data.network
+package com.example.coroutinesplayground.login.data.network
 
-import com.example.coroutinesplayground.login.domain.model.AuthState
+import com.example.coroutinesplayground.login.data.model.AuthState
 import com.example.coroutinesplayground.shared.networking.NetworkHelper
 import kotlinx.coroutines.delay
 import retrofit2.Call
@@ -20,7 +20,12 @@ class GetAuthStateRequest(
                     return Result.success(AuthState("1asd21dasd2dad", ""))
                 }
             }
-            val response = authApi.auth(GetAuthStateRequestCall.RequestBody(username = username, password = password)).execute()
+            val response = authApi.auth(
+                GetAuthStateRequestCall.RequestBody(
+                    username = username,
+                    password = password
+                )
+            ).execute()
             if (response.isSuccessful) {
                 response.body()?.sessionToken?.let {
                     return Result.success(AuthState(it, ""))

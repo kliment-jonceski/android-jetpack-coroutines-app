@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.login.view
+package com.example.coroutinesplayground.login.view.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,7 +19,6 @@ class LoginViewModel(
         viewModelScope.launch {
             when (event) {
                 is Event.OnSubmitLogin -> submitLogin(event.username, event.password)
-                else -> {}
             }
         }
     }
@@ -27,7 +26,7 @@ class LoginViewModel(
     private suspend fun submitLogin (username: String, password: String) {
         _state.emit(LoginState.InProgress)
         Timber.d("Login started, In progress....")
-        val result = loginUseCase.login(username, password)
+        val result = loginUseCase(username, password)
         if (result.isSuccess) {
             Timber.d("Login finished Successfully")
             _state.update { LoginState.Success }
