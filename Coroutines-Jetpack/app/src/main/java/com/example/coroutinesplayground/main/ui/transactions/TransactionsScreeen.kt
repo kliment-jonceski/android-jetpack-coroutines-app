@@ -24,9 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.coroutinesplayground.main.domain.model.Transaction
 import com.example.coroutinesplayground.main.navigation.MainNavigationActions
-import com.example.coroutinesplayground.ui.core.LoadingViewComponent
-import com.example.coroutinesplayground.util.convertTimestampToStringDate
-import com.example.coroutinesplayground.util.extractMonthFromTimestamp
+import com.example.coroutinesplayground.shared.ui.core.LoadingViewComponent
+import com.example.coroutinesplayground.shared.util.convertTimestampToStringDate
+import com.example.coroutinesplayground.shared.util.extractMonthFromTimestamp
 import org.koin.androidx.compose.koinViewModel
 import java.text.DecimalFormat
 

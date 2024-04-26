@@ -1,7 +1,5 @@
 package com.example.coroutinesplayground.main.ui.dashboard
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -9,10 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,10 +32,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.coroutinesplayground.main.domain.model.Transaction
 import com.example.coroutinesplayground.main.ui.transactions.TransactionMerchantDataComponent
 import com.example.coroutinesplayground.main.ui.transactions.TransactionTitleComponent
-import com.example.coroutinesplayground.ui.core.LoadingViewComponent
-import com.example.coroutinesplayground.util.formatAmount
+import com.example.coroutinesplayground.shared.ui.core.LoadingViewComponent
+import com.example.coroutinesplayground.shared.util.formatAmount
 import org.koin.androidx.compose.koinViewModel
-import java.nio.file.WatchEvent
 
 @Preview
 @Composable

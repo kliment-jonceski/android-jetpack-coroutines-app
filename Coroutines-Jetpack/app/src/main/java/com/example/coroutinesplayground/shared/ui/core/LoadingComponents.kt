@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.ui.core
+package com.example.coroutinesplayground.shared.ui.core
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

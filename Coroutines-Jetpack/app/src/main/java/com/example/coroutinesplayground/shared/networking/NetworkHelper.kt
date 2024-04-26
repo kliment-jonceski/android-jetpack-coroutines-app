@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.networking
+package com.example.coroutinesplayground.shared.networking
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

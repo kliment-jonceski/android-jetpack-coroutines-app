@@ -20,8 +20,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.coroutinesplayground.login.view.LoginActivity
-import com.example.coroutinesplayground.ui.theme.CoroutinesPlaygroundTheme
-import kotlinx.coroutines.cancel
+import com.example.coroutinesplayground.shared.ui.theme.CoroutinesPlaygroundTheme
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import org.koin.android.ext.android.inject

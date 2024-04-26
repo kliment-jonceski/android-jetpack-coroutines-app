@@ -1,7 +1,7 @@
 package com.example.coroutinesplayground.login.domain.data.network
 
 import com.example.coroutinesplayground.login.domain.model.AuthState
-import com.example.coroutinesplayground.networking.NetworkHelper
+import com.example.coroutinesplayground.shared.networking.NetworkHelper
 import kotlinx.coroutines.delay
 import retrofit2.Call
 import retrofit2.create

@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.ui.theme
+package com.example.coroutinesplayground.shared.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

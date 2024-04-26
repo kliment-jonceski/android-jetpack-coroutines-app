@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.util
+package com.example.coroutinesplayground.shared.util
 
 sealed class Async<out T> {
     object Loading : Async<Nothing>()

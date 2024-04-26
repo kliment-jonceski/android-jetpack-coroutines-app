@@ -11,7 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.example.coroutinesplayground.main.ui.MainActivity
-import com.example.coroutinesplayground.ui.theme.CoroutinesPlaygroundTheme
+import com.example.coroutinesplayground.shared.ui.theme.CoroutinesPlaygroundTheme
 import org.koin.android.ext.android.inject
 
 class LoginActivity: ComponentActivity() {

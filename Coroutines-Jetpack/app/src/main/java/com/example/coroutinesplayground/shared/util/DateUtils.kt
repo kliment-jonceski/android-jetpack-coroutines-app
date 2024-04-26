@@ -1,4 +1,4 @@
-package com.example.coroutinesplayground.util
+package com.example.coroutinesplayground.shared.util
 
 import java.text.SimpleDateFormat
 import java.time.Instant

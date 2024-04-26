@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.coroutinesplayground.main.navigation.MainNavHost
-import com.example.coroutinesplayground.ui.theme.CoroutinesPlaygroundTheme
+import com.example.coroutinesplayground.shared.ui.theme.CoroutinesPlaygroundTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
