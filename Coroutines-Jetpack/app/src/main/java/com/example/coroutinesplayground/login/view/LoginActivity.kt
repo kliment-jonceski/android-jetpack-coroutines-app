@@ -30,7 +30,9 @@ class LoginActivity: ComponentActivity() {
                     if (uiState == LoginViewModel.LoginState.Success) {
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                     }
-                    LoginComponent(loginViewModel = loginViewModel, uiState)
+                    LoginComponent(uiState, onAction = {
+                        loginViewModel.onEvent(it)
+                    })
                 }
             }
         }

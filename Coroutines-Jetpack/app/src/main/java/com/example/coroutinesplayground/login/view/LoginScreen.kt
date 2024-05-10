@@ -28,8 +28,8 @@ import com.example.coroutinesplayground.login.view.viewmodel.LoginViewModel
 
 @Composable
 fun LoginComponent(
-    loginViewModel: LoginViewModel,
-    uiState: LoginViewModel.LoginState
+    uiState: LoginViewModel.LoginState,
+    onAction: (LoginViewModel.Event) -> Unit
 ) {
     var credentialsState by remember {
         mutableStateOf(UserCredentials("", ""))
@@ -68,10 +68,7 @@ fun LoginComponent(
         }
         LoginButton(
             onclick = {
-                loginViewModel.onEvent(
-                    LoginViewModel.Event.OnSubmitLogin(
-                        credentialsState)
-                )
+                onAction.invoke(LoginViewModel.Event.OnSubmitLogin(credentialsState))
             })
     }
     if (uiState == LoginViewModel.LoginState.InProgress) {

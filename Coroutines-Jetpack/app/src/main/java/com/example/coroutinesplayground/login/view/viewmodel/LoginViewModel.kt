@@ -44,7 +44,7 @@ class LoginViewModel(
         object Failure: LoginState()
     }
 
-    sealed class Event {
-        data class OnSubmitLogin(val userCredentials: UserCredentials) : Event()
+    sealed interface Event {
+        data class OnSubmitLogin(val userCredentials: UserCredentials) : Event
     }
 }
