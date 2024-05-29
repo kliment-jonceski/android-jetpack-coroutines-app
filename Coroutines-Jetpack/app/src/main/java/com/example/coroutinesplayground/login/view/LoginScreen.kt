@@ -66,10 +66,11 @@ fun LoginComponent(
                 color = Color.Red ,
                 text = "Wrong credentials. Try again.")
         }
-        LoginButton(
-            onclick = {
-                onAction.invoke(LoginViewModel.Event.OnSubmitLogin(credentialsState))
-            })
+        //Optimization trick to avoid recomposition, avoid using lambda.
+//        val asd = fun() {
+//            onAction.invoke(LoginViewModel.Event.OnSubmitLogin(credentialsState))
+//        }
+        LoginButton { onAction.invoke(LoginViewModel.Event.OnSubmitLogin(credentialsState)) }
     }
     if (uiState == LoginViewModel.LoginState.InProgress) {
         Box(modifier = Modifier

@@ -22,7 +22,6 @@ class TransactionsViewModel (
         viewModelScope.launch {
             when (event) {
                 is Event.LoadAllTransactions -> loadAllTransactions()
-                else -> {}
             }
         }
     }

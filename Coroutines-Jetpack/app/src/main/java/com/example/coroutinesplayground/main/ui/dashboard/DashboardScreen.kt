@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,15 +34,13 @@ import com.example.coroutinesplayground.main.ui.transactions.TransactionMerchant
 import com.example.coroutinesplayground.main.ui.transactions.TransactionTitleComponent
 import com.example.coroutinesplayground.shared.ui.core.LoadingViewComponent
 import com.example.coroutinesplayground.shared.util.formatAmount
-import org.koin.androidx.compose.koinViewModel
 
 @Preview
 @Composable
-fun DashboardScreen() {
-    val dashboardViewModel: DashboardViewModel  = koinViewModel()
-    val balanceUiState = dashboardViewModel.balanceState.collectAsState()
-    val latestTransactionsUIState = dashboardViewModel.latestTransactionsState.collectAsState()
-
+fun DashboardScreen(
+    balanceUiState: State<BalanceUIState>,
+    latestTransactionsUIState: State<LatestTransactionsUIState>
+) {
     //Uncomment to use activity lifecycle events
     //triggerLoadingDataOnLifecycleEvent(dashboardViewModel)
 

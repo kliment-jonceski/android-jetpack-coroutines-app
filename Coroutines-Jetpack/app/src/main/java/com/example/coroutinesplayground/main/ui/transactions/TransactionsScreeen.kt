@@ -14,7 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,16 +27,14 @@ import com.example.coroutinesplayground.main.navigation.MainNavigationActions
 import com.example.coroutinesplayground.shared.ui.core.LoadingViewComponent
 import com.example.coroutinesplayground.shared.util.convertTimestampToStringDate
 import com.example.coroutinesplayground.shared.util.extractMonthFromTimestamp
-import org.koin.androidx.compose.koinViewModel
 import java.text.DecimalFormat
 
 
 @Composable
 fun TransactionsScreen(
-    navigationActions: MainNavigationActions
+    navigationActions: MainNavigationActions,
+    transactionUIState: State<TransactionsUIState>
 ) {
-    val transactionsViewModel: TransactionsViewModel = koinViewModel()
-    val transactionUIState = transactionsViewModel.transactionUIState.collectAsState()
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -139,5 +137,4 @@ fun TransactionMerchantDataComponent(transaction: Transaction) {
             color = Color.DarkGray
         )
     }
-
 }
